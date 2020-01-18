@@ -1,7 +1,7 @@
 import Layout from '../components/MyLayout';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
-
+import Title from '../components/Title';
 const PageLink = props => (
   <li>
     <Link href="/[id]" as={`/${props.id}`}>
@@ -23,7 +23,7 @@ export default function Blog(props) {
 
   return (
     <Layout menu={props.menu}>
-      <h1>My Blog</h1>
+      <Title>My Blog</Title>
       <h2>Pages</h2>
       <ul>
         {

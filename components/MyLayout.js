@@ -1,15 +1,15 @@
 import Header from './Header';
 import Head from 'next/head';
+import styled from 'styled-components'
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
+const Wrapper = styled.div`
+  width: 70%;
+  margin: 0 auto;
+`
 
 export default function Layout(props) {
   return (
-    <div style={layoutStyle}>
+    <Wrapper>
        <Head>
         <title>My Blog</title>
         <meta charSet="utf-8" />
@@ -17,6 +17,6 @@ export default function Layout(props) {
       </Head>
       <Header menu={props.menu}/>
       {props.children}
-    </div>
+    </Wrapper>
   )
 }

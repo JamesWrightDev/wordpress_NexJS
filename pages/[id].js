@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch';
 import Router from 'next/router';
 import Error from './404';
 import PageWrapper from '../components/PageWrapper';
-
+import Title from '../components/Title';
 const Page = (props) => {
 
   const { page } = props;
@@ -13,7 +13,7 @@ const Page = (props) => {
   }
   return (
     <Layout>
-          <h1>{page.title.rendered}</h1>
+          <Title>{page.title.rendered}</Title>
           <div dangerouslySetInnerHTML={ createMarkup() }></div>
     </Layout>
   );
