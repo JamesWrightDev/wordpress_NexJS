@@ -1,16 +1,20 @@
 import { useRouter } from 'next/router';
 import Layout from '../../components/MyLayout';
+import Title from '../../components/Title';
+import Content from '../../components/Content';
 
 export default function Post(props) {
-  const router = useRouter();;
   const post = props.posts[0];
+
   const createMarkup = () => {
     return {__html: post.content.rendered};
   }
   return (
     <Layout>
-      <h1>{router.query.id}</h1>
-      <div dangerouslySetInnerHTML={ createMarkup() }></div>
+      <Title>{post.title.rendered}</Title>
+      <Content>
+        <div dangerouslySetInnerHTML={ createMarkup() }></div>
+      </Content>
     </Layout>
   );
 }

@@ -1,0 +1,6 @@
+{
+  "name": "Headless Wordpress",
+  "rewrites": [
+    { "source": "/", "destination": "/index.js" }
+  ]
+}

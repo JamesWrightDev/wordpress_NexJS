@@ -52,14 +52,14 @@ Blog.getInitialProps = async function() {
   const pages = await fetch('https://jameswrightdev.co.uk/wp-json/wp/v2/pages');
   const pageData = await pages.json();
 
-  const posts = await fetch('https://jameswrightdev.co.uk/wp-json/wp/v2/posts');
-  const postsData = await posts.json();
+  // const posts = await fetch('https://jameswrightdev.co.uk/wp-json/wp/v2/posts');
+  // const postsData = await posts.json();
 
   const menu = await fetch('https://jameswrightdev.co.uk/wp-json/menus/v1/menus/main-navigation');
   const menuData = await menu.json();
 
   return {
-    posts: postsData,
+    // posts: postsData,
     pages: pageData,
     menu: menuData.items
   };

@@ -4,6 +4,8 @@ import Router from 'next/router';
 import Error from './404';
 import PageWrapper from '../components/PageWrapper';
 import Title from '../components/Title';
+import Content from '../components/Content';
+
 const Page = (props) => {
 
   const { page } = props;
@@ -14,7 +16,9 @@ const Page = (props) => {
   return (
     <Layout>
           <Title>{page.title.rendered}</Title>
-          <div dangerouslySetInnerHTML={ createMarkup() }></div>
+          <Content>
+            <div dangerouslySetInnerHTML={ createMarkup() }></div>
+          </Content>
     </Layout>
   );
 }

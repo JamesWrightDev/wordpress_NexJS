@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           {this.props.styleTags}
+
         </Head>
         <body>
           <Main />
