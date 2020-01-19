@@ -1,22 +1,32 @@
 import Link from 'next/link'
+import styled from 'styled-components'
 
-const linkStyle = {
-  marginRight: 15
-}
+const NavigationBar = styled.div`
+  display: flex;
+
+
+  a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    border: solid 1px black;
+    text-decoration: none;
+    padding: 12px;
+    margin-right: 12px;
+  }
+`
 
 export default function Header(props) {
   return (
-    <div>
+    <NavigationBar>
       {
         props.menu && props.menu.map(item => {
           return(
             <Link href="/[id]" as={item.slug} key={item.ID}>
-              <a style={linkStyle}>{item.title}</a>
+              <a>{item.title}</a>
             </Link>
           )
         })
       }
-
-    </div>
+    </NavigationBar>
   )
 }

@@ -1,18 +1,17 @@
 import Layout from '../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
-import Router from 'next/router';
 import Error from './404';
-import PageWrapper from '../components/PageWrapper';
 import Title from '../components/Title';
 import Content from '../components/Content';
+import PageWrapper from '../components/PageWrapper';
 
 const Page = (props) => {
-
   const { page } = props;
   if ( !page ) return <Error/>
   const createMarkup = () => {
     return {__html: page.content.rendered};
   }
+
   return (
     <Layout>
           <Title>{page.title.rendered}</Title>
@@ -31,4 +30,5 @@ Page.getInitialProps = async function(context) {
     page: data[0]
   };
 };
+
 export default Page;
