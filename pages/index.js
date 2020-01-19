@@ -2,9 +2,20 @@ import Layout from '../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
 import Title from '../components/Title';
 import Post from '../components/Post';
+import {useEffect} from 'react';
 
 export default function Blog(props) {
   const { posts } = props;
+
+  useEffect(() => {
+    (function () {
+      window.onpageshow = function(event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      };
+    })();
+  }, []);
 
   return (
     <Layout menu={props.menu}>

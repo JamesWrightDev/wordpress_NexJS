@@ -4,10 +4,21 @@ import Error from './404';
 import Title from '../components/Title';
 import Content from '../components/Content';
 import PageWrapper from '../components/PageWrapper';
+import {useEffect} from 'react';
 
 const Page = (props) => {
+  useEffect(() => {
+    (function () {
+      window.onpageshow = function(event) {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      };
+    })();
+  }, []);
   const { page } = props;
   if ( !page ) return <Error/>
+  console.log(page);
   const createMarkup = () => {
     return {__html: page.content.rendered};
   }
